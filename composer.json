@@ -1,0 +1,29 @@
+{
+    "name": "bigraja/admin",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Bigraja\\Admin\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Raja Khan",
+            "email": "contact.rajakhan@gmail.comm"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "laravel/framework": "^10.10"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bigraja\\Admin\\ServiceProvider"
+            ]
+        }
+    }
+}
