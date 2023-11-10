@@ -1,4 +1,6 @@
-<center> ## Laravel Admin</center>
+# Laravel Admin
+
+simple laravel admin panel
 
 ## Add admin side nav item
 
