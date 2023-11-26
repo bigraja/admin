@@ -5,7 +5,7 @@ namespace Bigraja\Admin\Http\Controllers;
 class DashboardController
 {
 
-    function show()
+    function index()
     {
         return view("admin::dashboard");
     }

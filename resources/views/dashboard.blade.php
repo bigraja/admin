@@ -1,3 +1,3 @@
 <x-admin-layout>
-    hello Bangladesh
+    hello raja
 </x-admin-layout>

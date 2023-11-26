@@ -3,6 +3,7 @@
 namespace Bigraja\Admin;
 
 use Bigraja\Admin\View\Components\Layout;
+use Bigraja\Admin\View\Components\Table;
 use Bigraja\Admin\View\Composers\AdminLayoutComposer;
 use Illuminate\Contracts\Foundation\CachesConfiguration;
 use Illuminate\Foundation\Console\AboutCommand;
@@ -32,6 +33,7 @@ class AdminServiceProvider extends ServiceProvider
         $this->registerRoutes();
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'admin');
         Blade::component('admin-layout', Layout::class);
+        Blade::component('resources-table', Table::class);
     }
 
     /**
@@ -56,7 +58,7 @@ class AdminServiceProvider extends ServiceProvider
         return [
             "prefix" => config('admin.prefix'),
             "middleware" => config('admin.middleware'),
-            'as' => 'admin'
+            'as' => 'admin.'
         ];
     }
 }

@@ -6,7 +6,10 @@
     "autoload": {
         "psr-4": {
             "Bigraja\\Admin\\": "src/"
-        }
+        },
+        "files": [
+            "helpers.php"
+        ]
     },
     "authors": [
         {
