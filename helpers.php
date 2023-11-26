@@ -1,12 +1,14 @@
 <?php
-echo 'dfdsf';
+
 if (!function_exists('action_url_build')) {
-    function action_url_build($value, $data)
+    function action_url_build($v, $data)
     {
-        $params = [];
-        foreach ($value as $column) {
-            $params[] = $data[$column];
+
+        foreach ($v as $value) {
+            if (!is_array($value)) {echo $value;}
         }
-        return route($value['name'], $params);
+
+        return '/';
+        // return route($value['name'], $params);
     }
 }

@@ -25,7 +25,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Bigraja\\Admin\\AdminServiceProvider"
+                "Bigraja\\Admin\\Providers\\AdminServiceProvider"
             ]
         }
     }

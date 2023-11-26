@@ -1,6 +1,6 @@
 <?php
 
-namespace Bigraja\Admin;
+namespace Bigraja\Admin\Provider;
 
 use Bigraja\Admin\View\Components\Layout;
 use Bigraja\Admin\View\Composers\AdminLayoutComposer;

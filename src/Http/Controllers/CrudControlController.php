@@ -7,33 +7,43 @@ use Illuminate\Database\Eloquent\Model;
 class CrudControlController
 {
     public $route_name;
+    public $model;
 
     function index()
     {
         if (count($this->tbody()) == count($this->thead())) {
             return view("admin::crud.index")
-                ->with("model", $this->model())
-                ->with('thead', $this->thead())
-                ->with('tbody', $this->tbody())
-                ->with('action', $this->action());
+                ->with("model", $this->model::all())
+                ->with('table_column', $this->table_column())
+                ->with('route_name', $this->route_name);
         }
     }
 
-    function action()
+    function show($id)
+    {
+        $model = $this->model::find($id);
+
+        return view('admin::crud.show')
+            ->with('model', $model)
+            ->with('show_data', $this->show_data());
+    }
+
+    function show_data()
     {
         return [
-            "Preview" => ["name" => $this->route_name . "show", "params" => ["id"]],
+            'name' => "Name",
+            'email' => "Mobile",
+            'mobile' => "Email",
         ];
     }
 
-    function thead()
+    function table_column()
     {
-        return [];
-    }
-
-    function tbody()
-    {
-        return [];
+        return [
+            'name' => "Name",
+            'email' => "Mobile",
+            'mobile' => "Email",
+        ];
     }
 
 }

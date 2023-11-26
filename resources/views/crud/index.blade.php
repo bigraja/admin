@@ -9,8 +9,8 @@
                     <th scope="col">
                         <input type="checkbox" class="form-check-input">
                     </th>
-                    @foreach($thead as $text)
-                    <th scope="col">{{$text}}</th>
+                    @foreach($table_column as $key => $value)
+                    <th scope="col">{{$value}}</th>
                     @endforeach
                     <th scope="col">Action</th>
                 </tr>
@@ -19,13 +19,12 @@
                 @foreach($model as $data)
                 <tr>
                     <td><input type="checkbox" class="form-check-input"></td>
-                    @foreach($tbody as $text)
-                    <td>{{$data[$text]}}</td>
+                    @foreach($table_column as $key => $value)
+                    <td>{{$data[$key]}}</td>
                     @endforeach
                     <td>
-                        @foreach($action as $key => $value)
-                        <a href="{{action_url_build($value, $data)}}">{{$key}}</a>
-                        @endforeach
+                       <a href="{{route($route_name . 'show', $data['id'])}}">Show</a>
+                       <a href="{{route($route_name . 'edit', $data['id'])}}">Edit</a>
                     </td>
                 </tr>
                 @endforeach
