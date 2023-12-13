@@ -9,4 +9,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get("/", [DashboardController::class, "index"])->name("admin");
 
-Route::resource("drivers", DriverController::class);
+// Route::resource("drivers", DriverController::class);

@@ -1,6 +1,6 @@
 <?php
 
-namespace Bigraja\Admin\Provider;
+namespace Bigraja\Admin\Providers;
 
 use Bigraja\Admin\View\Components\Layout;
 use Bigraja\Admin\View\Composers\AdminLayoutComposer;
@@ -14,4 +14,18 @@ use Illuminate\Support\ServiceProvider as MainServiceProvider;
 
 class ServiceProvider extends MainServiceProvider
 {
+
+    /**
+     * group route prefix and middeware
+     *
+     * @return array
+     */
+    public function routeConfiguration(): array
+    {
+        return [
+            "prefix" => config('admin.prefix'),
+            "middleware" => config('admin.middleware'),
+            'as' => 'admin.'
+        ];
+    }
 }
